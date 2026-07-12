@@ -1,1 +1,26 @@
+model:
+  vocab_size: 10000
+  embedding_dim: 64
+  num_layers: 6
+  num_heads: 8
+  hidden_dim: 256
+  max_seq_length: 512
+  dropout: 0.1
 
+training:
+  batch_size: 32
+  num_epochs: 10
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  warmup_steps: 1000
+
+kahler:
+  metric_type: "euclidean"
+  curvature: 0.0
+  normalize_quaternions: true
+
+hardware:
+  device: "auto"
+
+reproducibility:
+  seed: 42
