@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quaternion-kahler-nlp"
+version = "1.0.0"
+description = "Quaternionic-Kähler Natural Language Processing with geometric attention"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["nlp", "natural-language-processing", "quaternion", "geometry", "kahler", "embeddings", "transformers"]
+
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.21.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
